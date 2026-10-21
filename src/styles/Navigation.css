@@ -1,9 +1,10 @@
 .navigation {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 82vh;
     position: relative;
     z-index: 100;
+    margin-top: -64px;
 }
 
 .open-nav {
@@ -134,7 +135,7 @@
     }
 
     .navigation {
-        margin-left: 40px;
+        margin-left: 0px;                
     }
 
     .nav-list {

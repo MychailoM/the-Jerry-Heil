@@ -1,3 +1,5 @@
+
+/* CSS RESET */
 html,
 body,
 div,
@@ -79,12 +81,18 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 article,
@@ -98,69 +106,93 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
+}
+
+html,
+body,
+#root,
+.App {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html {
+  line-height: 1;
 }
 
 body {
-    line-height: 1;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #000;
+  background-image: url("../public/photos/main/poster.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  font-family: var(--font-body);
+  padding: 0 0 0 8px;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+/* CSS VARIABLES */
 :root {
   /* ШРИФТИ */
-  --font-body: 'Montserrat', sans-serif;
-  --font-accent-gothic: 'UnifrakturMaguntia', cursive;
-  --font-display-serif: 'Cormorant Garamond', serif;
-  --font-display-modern: 'Unbounded', sans-serif;
-  --font-heading-syne: 'Syne', sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-accent-gothic: "Birthstone", cursive;
+  --font-display-serif: "Cormorant Garamond", serif;
+  --font-display-modern: "Unbounded", sans-serif;
+  --font-heading-syne: "Syne", sans-serif;
 
-  /* ЧОРНІ ТА ГРАФІТОВІ ФОНИ */
+  /* ФОНИ */
   --bg-pitch: #090b0c;
   --bg-main: #101415;
   --bg-card: #181f20;
   --bg-card-hover: #222b2c;
   --bg-surface: #2e3839;
 
-  /* GLASSMORPHISM СТРУКТУРА */
+  /* GLASSMORPHISM */
   --glass-bg: rgba(16, 20, 21, 0.4);
   --glass-border: rgba(222, 240, 235, 0.12);
   --glass-border-hover: rgba(222, 240, 235, 0.35);
   --glass-blur: blur(20px);
 
-  /* ВІДТІНКИ БІЛОГО */
+  /* БІЛІ ВІДТІНКИ */
   --white-pure: #ffffff;
   --white-mint-tint: #f0f7f4;
   --white-sky-tint: #f0f5f9;
   --white-sage-tint: #f2f5f1;
   --white-blush-tint: #fcf5f7;
 
-  /* ВІДТІНКИ СІРОГО ТА СЯЙВА */
+  /* СІРІ ВІДТІНКИ ТА СЯЙВО */
   --gray-silver-mint: #d0ded8;
   --gray-ice-blue: #c8d6e3;
   --gray-muted-sage: #8a9993;
@@ -168,16 +200,18 @@ a {
   --glow-mint: rgba(208, 222, 216, 0.15);
 }
 
-
-body {
-    width: 100%;
-    height: 100vh;
-    background-image: url('/public/photos/main/poster.jpg');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    background-color: black;
+/* APP LAYOUT */
+.App {
+  height: 100vh;
+  height: 100dvh;
 }
+
+.home {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
