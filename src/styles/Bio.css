@@ -1,0 +1,225 @@
+
+.bio {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-bottom: 64px;
+    color: var(--white-mint-tint);
+    animation: bio-appear 0.6s ease both;
+}
+
+/* Затемнення та розмиття фонового зображення */
+.bio__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(9, 11, 12, 0.48);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
+}
+
+/* Основний контент */
+.main-bio-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: clamp(36px, 6vw, 88px) 0;
+}
+
+.main-bio-content .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+}
+
+/* Обгортка фотографії */
+.main-bio-photo-wrap {
+    position: relative;
+    flex: 0 1 400px;
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border-hover);
+    border-radius: 20px;
+    background: rgba(16, 20, 21, 0.5);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.3),
+        0 0 24px var(--glow-mint);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.main-bio-photo-wrap:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.4),
+        0 0 32px rgba(208, 222, 216, 0.22);
+}
+
+/* Фотографія */
+.main-bio-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 13px;
+}
+
+/* Текстова картка */
+.main-bio-text-content {
+    width: 100%;
+    max-width: 680px;
+    padding: clamp(24px, 4vw, 44px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    background: rgba(16, 20, 21, 0.58);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Заголовок */
+.main-bio-title {
+    margin: 0;
+    color: var(--white-pure);
+    font-family: var(--font-display-modern);
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+/* Декоративна лінія */
+.main-bio-line {
+    width: 72px;
+    height: 3px;
+    margin: 22px 0 26px;
+    border-radius: 999px;
+    background: var(--gray-silver-mint);
+    box-shadow: 0 0 14px var(--glow-mint);
+}
+
+/* Біографічний текст */
+.main-bio-text {
+    color: var(--gray-silver-mint);
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
+}
+
+/* Планшети та невеликі ноутбуки */
+@media (min-width: 720px) {
+    .main-bio-content .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(28px, 4vw, 56px);
+    }
+
+    .main-bio-photo-wrap {
+        flex: 0 1 360px;
+        width: 42%;
+        max-width: 360px;
+    }
+
+    .main-bio-text-content {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+/* Великі екрани */
+@media (min-width: 1100px) {
+    .main-bio-content .container {
+        gap: 64px;
+    }
+
+    .main-bio-photo-wrap {
+        flex-basis: 400px;
+        max-width: 400px;
+    }
+
+    .main-bio-text-content {
+        max-width: 680px;
+    }
+}
+
+/* Мобільні пристрої */
+@media (max-width: 480px) {
+    .bio {
+        padding-bottom: 32px;
+    }
+
+    .main-bio-content {
+        padding: 28px 0;
+    }
+
+    .main-bio-content .container {
+        gap: 24px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .main-bio-photo-wrap {
+        max-width: 320px;
+        padding: 6px;
+        border-radius: 16px;
+    }
+
+    .main-bio-photo {
+        border-radius: 11px;
+    }
+
+    .main-bio-text-content {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .main-bio-line {
+        margin: 18px 0 20px;
+    }
+
+    .main-bio-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+/* Доступність: зменшення анімації */
+@media (prefers-reduced-motion: reduce) {
+    .bio {
+        animation: none;
+    }
+
+    .main-bio-photo-wrap {
+        transition: none;
+    }
+
+    .main-bio-photo-wrap:hover {
+        transform: none;
+    }
+}
+
+@keyframes bio-appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+    
