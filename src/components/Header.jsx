@@ -7,9 +7,7 @@ export function Header() {
       <div className="container header-container">
         <div className="header-logo-wrap">
           <Link className="header-logo" to="/">
-            Jerry Heil
-            <br />
-            <span className="header-logo-deco">Біографія</span>
+            Jerry Heil            
           </Link>
         </div>
         <nav className="header-nav">
@@ -25,7 +23,7 @@ export function Header() {
               </NavLink>
             </li>
             <li className="header-nav-item">
-              <NavLink to="/" className="header-nav-link">
+              <NavLink to="/bio" className="header-nav-link">
                 Соц.Мережі
               </NavLink>
             </li>

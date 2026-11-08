@@ -1,11 +1,16 @@
 import "./../styles/Bio.css";
 import { Header } from "../components/Header";
 
+import { SongsList } from "../components/SongsList";
+
+
 export function Bio() {
   return (
     <main className="bio">
       <div className="bio__overlay" />
       <Header />
+
+       
 
       {/* Основна біографія */}
       <section className="bio-part">

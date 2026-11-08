@@ -8,16 +8,10 @@
     font-weight: 700;
     color: var(--white-sky-tint);
     font-family: var(--font-accent-gothic);
-    font-size: 56px;
+    font-size: 64px;
     margin: 0;
     padding: 0;
     position: relative;
-}
-
-.header-logo-deco {
-    position: absolute;
-    left: 84px;
-    font-size: 18px;
 }
 
 .header-container{

@@ -7,8 +7,8 @@ export function Nav() {
   const links = [
     { name: "Головна", url: "/" },
     { name: "Біографія", url: "/bio" },
-    { name: "Соц. Мережі", url: "/social" },
-    { name: "Музика", url: "/music" },
+    { name: "Соц. Мережі", url: "/socials" },
+    { name: "Музика", url: "/songs" },
     { name: "Галерея", url: "/gallery" },
   ];
 
@@ -31,9 +31,9 @@ export function Nav() {
         >
           <path
             d="M4 4L28 32L4 60"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="4"
           />
         </svg>
       </button>
